@@ -12,7 +12,6 @@ argcomplete==2.0.0
 asgiref==3.5.2
 attrs==22.1.0
 Babel==2.10.3
-beautifulsoup4 @ file:///opt/conda/conda-bld/beautifulsoup4_1650462163268/work
 blinker==1.5
 boto==2.49.0
 brotlipy==0.7.0
