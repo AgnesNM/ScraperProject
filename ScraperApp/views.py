@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.http import HttpResponseRedirect
-
+import requests
 
 #from ScraperApp import forms
 from . forms import ScraperInput
@@ -15,9 +15,10 @@ def form_view(request):
 
     if request.method == "POST":
 
-        # create a form instance and populate it with data from the request:
+        # create a form instance and populate it with data from the request:        
 
-        form = ScraperInput(request.POST)
+        form = ScraperInput(request.POST)     
+         
 
         # check whether it's valid:
 
@@ -46,6 +47,7 @@ def form_view(request):
     else:
 
         form = ScraperInput()
+        
 
     return render(request, "ScraperApp/index.html", {"form": form})
    
@@ -53,6 +55,23 @@ def form_view(request):
 def scraper(request):
     return HttpResponse("Hey, this is another view in the Scraper App.")
 
+def slack_integration(request):
+    response = requests.get('https://jsonplaceholder.typicode.com/users')
+    users = response.json()
+    
+    slack_dict = {'insert_me': users}
+    return render (request, 'ScraperApp/index.html', context = slack_dict)
+
 # def home(request):
 #     my_dict = {"insert_me": "Welcome to SuperScraper. On what site do you want to scrape?" }
 #     return render( request, "ScraperApp/index.html", context = my_dict) 
+
+
+
+
+
+
+
+
+
+

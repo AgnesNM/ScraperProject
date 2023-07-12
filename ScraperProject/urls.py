@@ -20,8 +20,8 @@ from ScraperApp import views
 from django.urls import include, path
 
 urlpatterns = [
-    path("", views.form_view, name = "form_view"),  
-    path("scraper/", include("ScraperApp.urls")),  
+    path("", views.form_view, name = "form_view"),    
+    path("scraper/", include("ScraperApp.urls")),               
     path("accounts/", include("allauth.urls")),     
     path("admin/", admin.site.urls),    
 ]
