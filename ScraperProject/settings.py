@@ -94,7 +94,27 @@ WSGI_APPLICATION = "ScraperProject.wsgi.application"
 
 
 
-# DATABASES = {
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.postgresql_psycopg2",
+        "NAME": "superscraper",
+        "USER": "scraper",
+        "PASSWORD": "havana",
+        "HOST": "localhost",
+        "PORT": "5432"
+    }
+}
+
+#Configuring my Postgres with Render
+
+# import dj_database_url
+
+# if not DEBUG:
+#     DATABASES = {
+#         "default": dj_database_url.parse(os.environ.get("DATABASE_URL"))
+#     } 
+# else :
+#     DATABASES = {
 #     "default": {
 #         "ENGINE": "django.db.backends.postgresql_psycopg2",
 #         "NAME": "superscraper",
@@ -103,27 +123,7 @@ WSGI_APPLICATION = "ScraperProject.wsgi.application"
 #         "HOST": "localhost",
 #         "PORT": "5433"
 #     }
-# }
-
-#Configuring my Postgres with Render
-
-import dj_database_url
-
-if not DEBUG:
-    DATABASES = {
-        "default": dj_database_url.parse(os.environ.get("DATABASE_URL"))
-    } 
-else :
-    DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.postgresql_psycopg2",
-        "NAME": "superscraper",
-        "USER": "scraper",
-        "PASSWORD": "havana",
-        "HOST": "localhost",
-        "PORT": "5433"
-    }
-    }
+#     }
 
 
 # Password validation
