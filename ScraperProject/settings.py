@@ -97,9 +97,9 @@ WSGI_APPLICATION = "ScraperProject.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
-        "NAME": "superscraper",
-        "USER": "scraper",
-        "PASSWORD": "havana",
+        "NAME": "sales",
+        "USER": "owner",
+        "PASSWORD": "Ndiungush23#",
         "HOST": "localhost",
         "PORT": "5432"
     }
@@ -107,7 +107,7 @@ DATABASES = {
 
 #Configuring my Postgres with Render
 
-# import dj_database_url
+import dj_database_url
 
 # if not DEBUG:
 #     DATABASES = {
